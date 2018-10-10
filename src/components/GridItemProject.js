@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import { Link } from "gatsby";
 import ScaledImage from "./ScaledImage";
 import styled from "styled-components";
 
@@ -10,13 +11,17 @@ export default ({ data, image }) => (
   <Fragment>
     {data && (
       <Container>
-        <ScaledImage
-          borderColor="#fff"
-          src={image.resize.src}
-          size={image.resize.width}
-        />
+        <a href={data.frontmatter.url} target="_blank">
+          <ScaledImage
+            borderColor="#fff"
+            src={image.resize.src}
+            size={image.resize.width}
+          />
+        </a>
         <p>
-          <strong>{data.frontmatter.title}</strong>
+          <strong>
+            {data.frontmatter.client} - {data.frontmatter.title}
+          </strong>
           <br />
           <small>{data.frontmatter.role}</small>
         </p>

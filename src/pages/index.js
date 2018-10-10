@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../components/layout";
-import ProjectGrid from "../components/ProjectGrid";
+import ListProjects from "../components/ListProjects";
 import PageSection from "../components/PageSection";
 import { graphql } from "gatsby";
 
@@ -8,13 +8,21 @@ export default ({ data }) => (
   <Layout>
     <PageSection>
       <div
-        className="blog-post-content"
+        style={{
+          maxWidth: "420px",
+          textAlign: "center",
+          margin: "1.5rem auto",
+          color: "#292159"
+        }}
         dangerouslySetInnerHTML={{ __html: data.about.html }}
       />
     </PageSection>
     <PageSection>
-      <h2>Projects</h2>
-      <ProjectGrid projects={data.projects.edges} images={data.projectImages} />
+      <h2>Recent Projects</h2>
+      <ListProjects
+        projects={data.projects.edges}
+        images={data.projectImages}
+      />
     </PageSection>
   </Layout>
 );
@@ -32,7 +40,9 @@ export const query = graphql`
               title
               date(formatString: "MMMM DD, YYYY")
               client
-              role
+              audioTitle
+              audioUrl
+              url
             }
           }
         }

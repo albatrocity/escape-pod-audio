@@ -13,7 +13,8 @@ export default ({ src, size, scale, borderColor }) => (
         display: "block",
         marginBottom: 0,
         border: `4px solid ${borderColor}`,
-        boxShadow: "0 0 0.4rem rgba(0, 0, 0, 0.3)"
+        boxShadow: "0 0 0.15rem rgba(0, 0, 0, 0.3)",
+        borderRadius: "0.2rem"
       }}
       src={src}
     />

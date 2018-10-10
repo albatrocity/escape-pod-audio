@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Escape Pod Audio`,
+    title: `Escape Pod Audio - Ross Brown`,
     author: `Ross Brown`
   },
   plugins: [
