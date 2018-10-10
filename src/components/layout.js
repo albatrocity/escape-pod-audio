@@ -5,6 +5,8 @@ import styled from "styled-components";
 import { StaticQuery, graphql } from "gatsby";
 import AudioPlayer from "./AudioPlayer";
 import { connect } from "react-redux";
+import audioSetPlaying from "../state/actions/audioSetPlaying";
+import audioPlayFile from "../state/actions/audioPlayFile";
 
 const Container = styled.div`
   background: #fff;
@@ -15,7 +17,15 @@ const Container = styled.div`
 
 class Layout extends Component {
   render() {
-    const { isPlaying, audioUrl, audioTitle, children } = this.props;
+    const {
+      isPlaying,
+      audioUrl,
+      audioTitle,
+      audioArtist,
+      children,
+      audioSetPlaying,
+      audioPlayFile
+    } = this.props;
 
     return (
       <StaticQuery
@@ -53,7 +63,10 @@ class Layout extends Component {
             <AudioPlayer
               isPlaying={isPlaying}
               audioTitle={audioTitle}
-              audioUrl
+              audioUrl={audioUrl}
+              audioArtist={audioArtist}
+              handlePlayFile={audioPlayFile}
+              handlePlayPause={audioSetPlaying}
             />
           </Container>
         )}
@@ -62,10 +75,14 @@ class Layout extends Component {
   }
 }
 
-const mapStateToProps = ({ isPlaying, audioTitle, audioUrl }) => ({
+const mapStateToProps = ({ isPlaying, audioTitle, audioUrl, audioArtist }) => ({
   isPlaying,
   audioTitle,
-  audioUrl
+  audioUrl,
+  audioArtist
 });
 
-export default connect(mapStateToProps)(Layout);
+export default connect(
+  mapStateToProps,
+  { audioSetPlaying, audioPlayFile }
+)(Layout);

@@ -1,8 +1,11 @@
-import React, { Fragment } from "react";
+import React, { Fragment, Component } from "react";
 import { Link } from "gatsby";
+import { connect } from "react-redux";
 import ScaledImage from "./ScaledImage";
 import Button from "./Button";
 import styled from "styled-components";
+import audioSetPlaying from "../state/actions/audioSetPlaying";
+import audioPlayFile from "../state/actions/audioPlayFile";
 
 const Container = styled.div`
   display: flex;
@@ -28,33 +31,74 @@ const Details = styled.div`
   padding: 0 1rem 0 1rem;
 `;
 
-export default ({ data, image }) => (
-  <Fragment>
-    {data && (
-      <Container>
-        <Art>
-          <ScaledImage
-            borderColor="#fff"
-            src={image.resize.src}
-            size={image.resize.width}
-          />
-          {data.frontmatter.audioUrl && (
-            <div style={{ padding: "0.6rem 0" }}>
-              <Button block>Play "{data.frontmatter.audioTitle}"</Button>
-            </div>
-          )}
-        </Art>
-        <Details>
-          <Title>
-            <h3>{data.frontmatter.title}</h3>
-            <p>{data.frontmatter.client}</p>
-          </Title>
-          <div dangerouslySetInnerHTML={{ __html: data.html }} />
-          <a href={data.frontmatter.url} target="_blank">
-            More info
-          </a>
-        </Details>
-      </Container>
-    )}
-  </Fragment>
-);
+class ListItemProject extends Component {
+  render() {
+    const {
+      data,
+      image,
+      isPlaying,
+      audioTitle,
+      audioUrl,
+      audioPlayFile,
+      audioSetPlaying
+    } = this.props;
+    const isCurrentTrack = data && audioUrl === data.frontmatter.audioUrl;
+
+    const handlePlay = () =>
+      isCurrentTrack
+        ? audioSetPlaying(!isPlaying)
+        : audioPlayFile({
+            url: data.frontmatter.audioUrl,
+            title: data.frontmatter.audioTitle,
+            artist: data.frontmatter.client
+          });
+
+    return (
+      <Fragment>
+        {data && (
+          <Container>
+            <Art>
+              <ScaledImage
+                borderColor="#fff"
+                src={image.resize.src}
+                size={image.resize.width}
+              />
+              {data.frontmatter.audioUrl && (
+                <div style={{ padding: "0.6rem 0" }}>
+                  <Button block onClick={handlePlay}>
+                    {isCurrentTrack
+                      ? isPlaying
+                        ? `Pause`
+                        : `Play "${data.frontmatter.audioTitle}"`
+                      : `Play "${data.frontmatter.audioTitle}"`}
+                  </Button>
+                </div>
+              )}
+            </Art>
+            <Details>
+              <Title>
+                <h3>{data.frontmatter.title}</h3>
+                <p>{data.frontmatter.client}</p>
+              </Title>
+              <div dangerouslySetInnerHTML={{ __html: data.html }} />
+              <a href={data.frontmatter.url} target="_blank">
+                More info
+              </a>
+            </Details>
+          </Container>
+        )}
+      </Fragment>
+    );
+  }
+}
+
+const mapStateToProps = ({ isPlaying, audioTitle, audioUrl }) => ({
+  isPlaying,
+  audioTitle,
+  audioUrl
+});
+
+export default connect(
+  mapStateToProps,
+  { audioPlayFile, audioSetPlaying }
+)(ListItemProject);
