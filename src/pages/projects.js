@@ -6,7 +6,7 @@ import WidthConstrainer from "../components/WidthConstrainer";
 import { graphql } from "gatsby";
 
 export default ({ data }) => (
-  <Layout>
+  <div>
     <WidthConstrainer>
       <PageSection>
         <h1>Projects</h1>
@@ -16,7 +16,7 @@ export default ({ data }) => (
         />
       </PageSection>
     </WidthConstrainer>
-  </Layout>
+  </div>
 );
 
 export const query = graphql`
