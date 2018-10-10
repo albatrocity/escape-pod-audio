@@ -29,7 +29,10 @@ export default ({ data }) => (
 
 export const query = graphql`
   query AllProjectsMeta {
-    projects: allFile(filter: { sourceInstanceName: { eq: "projects" } }) {
+    projects: allFile(
+      filter: { sourceInstanceName: { eq: "projects" } }
+      sort: { order: DESC, fields: name }
+    ) {
       edges {
         node {
           id

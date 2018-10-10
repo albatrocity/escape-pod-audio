@@ -4,14 +4,24 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 import IconPause from "./IconPause";
 import IconPlay from "./IconPlay";
+import posed from "react-pose";
 
-const Container = styled.div`
+const Anim = posed.div({
+  open: {
+    y: 0
+  },
+  closed: {
+    y: 100
+  }
+});
+
+const Container = styled(Anim)`
   background: #ffcd00;
   width: 100%;
   padding: 0.3rem 0.4rem;
   position: fixed;
   bottom: 0;
-  display: ${p => (p.audioUrl ? "flex" : "none")};
+  display: flex;
   align-items: center;
 `;
 
@@ -45,7 +55,7 @@ export default ({
   audioUrl,
   handlePlayPause
 }) => (
-  <Container audioUrl={audioUrl}>
+  <Container pose={audioUrl ? "open" : "closed"}>
     <Controls>
       {isPlaying ? (
         <Button>
