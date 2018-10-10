@@ -17,6 +17,19 @@ const Button = styled.span`
   font-size: 75%;
   letter-spacing: 0.1rem;
   font-family: "Maven Pro";
+
+  &:hover {
+    background: #ff2983;
+  }
+  &:active {
+    background: #ba004e;
+    color: rgb(217, 178, 214);
+    text-shadow: 0 2px 0 #9f0947;
+  }
+
+  a {
+    color: #fff;
+  }
 `;
 
 export default ({ children, ...props }) => (

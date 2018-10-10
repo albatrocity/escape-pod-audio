@@ -14,11 +14,23 @@ const Container = styled.div`
   flex-basis: 200px;
   margin-bottom: 1rem;
   padding-bottom: 1rem;
+  border-bottom: 1px dashed rgba(41, 33, 89, 0.4);
+
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+  }
 `;
 const Title = styled.div`
   h3 {
     margin-bottom: 0;
     margin-top: 0.8rem;
+  }
+  cite {
+    color: rgba(41, 33, 89, 0.5);
+  }
+
+  @media (max-width: 768px) {
+    text-align: center;
   }
 `;
 const Art = styled.div`
@@ -27,7 +39,12 @@ const Art = styled.div`
 `;
 const Details = styled.div`
   flex-grow: 1;
-  padding: 0 1rem 0 1rem;
+  padding: 0 0 0 1rem;
+`;
+
+const Actions = styled.div`
+  display: flex;
+  justify-content: flex-end;
 `;
 
 class ListItemProject extends Component {
@@ -76,16 +93,22 @@ class ListItemProject extends Component {
             <Details>
               <Title>
                 <h3>{data.frontmatter.title}</h3>
-                <p>{data.frontmatter.client}</p>
+                <p>
+                  {data.frontmatter.client}
+                  <br />
+                  <cite>Released {data.frontmatter.date}</cite>
+                </p>
               </Title>
               <div dangerouslySetInnerHTML={{ __html: data.html }} />
-              <a
-                href={data.frontmatter.url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                More info
-              </a>
+              <Actions>
+                <a
+                  href={data.frontmatter.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Check out the release
+                </a>
+              </Actions>
             </Details>
           </Container>
         )}

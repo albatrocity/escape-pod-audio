@@ -16,6 +16,7 @@ const Anim = posed.div({
 
 const Container = styled(Anim)`
   background: #ffcd00;
+  border-top: 2px solid #292159;
   width: 100%;
   padding: 0.3rem 0.4rem;
   position: fixed;

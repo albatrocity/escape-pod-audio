@@ -2,17 +2,25 @@ import React, { Component } from "react";
 import LogoType from "./LogoType";
 import Helmet from "react-helmet";
 import styled from "styled-components";
-import { StaticQuery, graphql } from "gatsby";
+import { StaticQuery, graphql, Link } from "gatsby";
 import AudioPlayer from "./AudioPlayer";
 import { connect } from "react-redux";
 import audioSetPlaying from "../state/actions/audioSetPlaying";
 import audioPlayFile from "../state/actions/audioPlayFile";
+import StarBg from "../star_bg.svg";
+import WidthConstrainer from "./WidthConstrainer";
 
 const Container = styled.div`
   background: #fff;
   height: 100%;
   width: 100%;
-  padding-bottom: 100px;
+`;
+
+const Header = styled.div`
+  background: url(${StarBg}) repeat;
+  background-size: 500px;
+  background-attachment: fixed;
+  padding: 0.1em;
 `;
 
 class Layout extends Component {
@@ -40,26 +48,28 @@ class Layout extends Component {
         `}
         render={data => (
           <Container>
-            <div style={{ margin: `0 auto`, maxWidth: 650, padding: `0 1rem` }}>
-              <Helmet
-                defaultTitle={`Escape Pod Audio`}
-                titleTemplate={`%s | GatsbyJS`}
-              >
-                <meta name="og:type" content="website" />
-                <meta name="og:site_name" content="Escape Pod Audio" />
-                <html lang="en" />
-              </Helmet>
-              <header>
-                <LogoType
-                  style={{
-                    maxWidth: "400px",
-                    margin: "0 auto",
-                    display: "block"
-                  }}
-                />
-              </header>
-              {children}
-            </div>
+            <Header>
+              <WidthConstrainer>
+                <Helmet
+                  defaultTitle={`Escape Pod Audio`}
+                  titleTemplate={`%s | GatsbyJS`}
+                >
+                  <meta name="og:type" content="website" />
+                  <meta name="og:site_name" content="Escape Pod Audio" />
+                  <html lang="en" />
+                </Helmet>
+                <Link to="/">
+                  <LogoType
+                    style={{
+                      maxWidth: "400px",
+                      margin: "0 auto",
+                      display: "block"
+                    }}
+                  />
+                </Link>
+              </WidthConstrainer>
+            </Header>
+            <section>{children}</section>
             <AudioPlayer
               isPlaying={isPlaying}
               audioTitle={audioTitle}
