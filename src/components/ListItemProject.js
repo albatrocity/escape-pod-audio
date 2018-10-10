@@ -1,5 +1,4 @@
 import React, { Fragment, Component } from "react";
-import { Link } from "gatsby";
 import { connect } from "react-redux";
 import ScaledImage from "./ScaledImage";
 import Button from "./Button";
@@ -37,7 +36,6 @@ class ListItemProject extends Component {
       data,
       image,
       isPlaying,
-      audioTitle,
       audioUrl,
       audioPlayFile,
       audioSetPlaying
@@ -81,7 +79,11 @@ class ListItemProject extends Component {
                 <p>{data.frontmatter.client}</p>
               </Title>
               <div dangerouslySetInnerHTML={{ __html: data.html }} />
-              <a href={data.frontmatter.url} target="_blank">
+              <a
+                href={data.frontmatter.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 More info
               </a>
             </Details>
@@ -92,9 +94,8 @@ class ListItemProject extends Component {
   }
 }
 
-const mapStateToProps = ({ isPlaying, audioTitle, audioUrl }) => ({
+const mapStateToProps = ({ isPlaying, audioUrl }) => ({
   isPlaying,
-  audioTitle,
   audioUrl
 });
 

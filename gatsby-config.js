@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Escape Pod Audio - Ross Brown`,
+    title: `Escape Pod Music - Ross Brown`,
     author: `Ross Brown`
   },
   plugins: [
@@ -21,7 +21,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/data/pages`,
+        path: `${__dirname}/src/pages`,
         name: "pages"
       }
     },
@@ -29,7 +29,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `projects`,
-        path: `${__dirname}/src/data/projects/`,
+        path: `${__dirname}/src/projects/`,
         ignore: [`**/\.*`] // ignore files starting with a dot
       }
     },

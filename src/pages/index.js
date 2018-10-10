@@ -24,6 +24,10 @@ export default ({ data }) => (
         images={data.projectImages}
       />
     </PageSection>
+    <PageSection>
+      <h2>{data.mixing.frontmatter.title}</h2>
+      <div dangerouslySetInnerHTML={{ __html: data.mixing.html }} />
+    </PageSection>
   </Layout>
 );
 
@@ -51,19 +55,13 @@ export const query = graphql`
         }
       }
     }
-    pages: allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/pages/" } }
-    ) {
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-          }
-        }
+    about: markdownRemark(fileAbsolutePath: { regex: "/about/" }) {
+      html
+      frontmatter {
+        title
       }
     }
-    about: markdownRemark(fileAbsolutePath: { regex: "/about/" }) {
+    mixing: markdownRemark(fileAbsolutePath: { regex: "/mixing/" }) {
       html
       frontmatter {
         title

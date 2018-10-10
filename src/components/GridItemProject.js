@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-import { Link } from "gatsby";
 import ScaledImage from "./ScaledImage";
 import styled from "styled-components";
 
@@ -11,7 +10,11 @@ export default ({ data, image }) => (
   <Fragment>
     {data && (
       <Container>
-        <a href={data.frontmatter.url} target="_blank">
+        <a
+          href={data.frontmatter.url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <ScaledImage
             borderColor="#fff"
             src={image.resize.src}

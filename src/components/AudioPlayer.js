@@ -1,6 +1,5 @@
 import React from "react";
 import ReactHowler from "react-howler";
-import { Link } from "gatsby";
 import styled from "styled-components";
 import IconPause from "./IconPause";
 import IconPlay from "./IconPlay";
