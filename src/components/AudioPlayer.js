@@ -34,6 +34,10 @@ const Info = styled.span`
 const Controls = styled.div`
   display: flex;
   padding-right: 0.4rem;
+
+  svg {
+    fill: #292159;
+  }
 `;
 
 const Button = styled.div`
@@ -70,6 +74,12 @@ export default ({
     <Info>
       {audioTitle} - {audioArtist}
     </Info>
-    {audioUrl && <ReactHowler src={audioUrl} playing={isPlaying} />}
+    {audioUrl && (
+      <ReactHowler
+        src={audioUrl}
+        playing={isPlaying}
+        onEnd={() => handlePlayPause(false)}
+      />
+    )}
   </Container>
 );
