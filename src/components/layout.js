@@ -56,6 +56,10 @@ class Layout extends Component {
                 >
                   <meta name="og:type" content="website" />
                   <meta name="og:site_name" content="Escape Pod Audio" />
+                  <meta
+                    name="description"
+                    content="Escape Pod is the home studio of audio engineer and producer Ross Brown, who has been writing, recording, and producing music for over 15 years"
+                  />
                   <html lang="en" />
                 </Helmet>
                 <Link to="/">

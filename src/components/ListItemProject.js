@@ -77,6 +77,7 @@ class ListItemProject extends Component {
                 borderColor="#fff"
                 src={image.resize.src}
                 size={image.resize.width}
+                alt={`${data.frontmatter.title} by ${data.frontmatter.client}`}
               />
               {data.frontmatter.audioUrl && (
                 <div style={{ padding: "0.6rem 0" }}>

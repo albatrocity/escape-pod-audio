@@ -6,7 +6,7 @@ const Container = styled.div`
   max-height: ${p => p.originalSize * (p.scale || 0.5)}px;
 `;
 
-export default ({ src, size, scale, borderColor }) => (
+export default ({ src, size, scale, borderColor, alt }) => (
   <Container originalSize={size} scale={scale}>
     <img
       style={{
@@ -17,6 +17,7 @@ export default ({ src, size, scale, borderColor }) => (
         borderRadius: "0.2rem"
       }}
       src={src}
+      alt={alt}
     />
   </Container>
 );
