@@ -27,7 +27,7 @@ _Screenshot of the [OBXD soft synth](https://www.discodsp.com/obxd/), a rough ap
 
 ### Oscillators
 
-Pretty straightforward here: both oscillators are set to sawtooth\* and tuned to the same pitch. The sub oscillator is not used in this sound because the rest of the band covers enough space in the track.
+Pretty straightforward here: both oscillators are set to sawtooth[^osc] and tuned to the same pitch. The sub oscillator is not used in this sound because the rest of the band covers enough space in the track.
 
 ### Filters, Envelopes, and Modulation
 
@@ -80,4 +80,4 @@ I drop the chorus on this patch so I'm left with just the bucket brigade delay. 
 
 These aren't groundbreaking sounds by any means but they're classic for a reason and they're simple to achieve. After all, it's less about the sound than it is what you do with it. Keep on synthesizin'.
 
-- Both oscillators a variable wave shape, meaning you can smoothly transition from a sawtooth to a pulse wave. Oscillator 2 has the ability to use a triangle wave shape at its leftmost position on the "shape" knob. This is why oscillator 2's shape knob is in a different position than oscillator 1's, yet they're both basically sawtooth.
+[^osc]: Both oscillators a variable wave shape, meaning you can smoothly transition from a sawtooth to a pulse wave. Oscillator 2 has the ability to use a triangle wave shape at its leftmost position on the "shape" knob. This is why oscillator 2's shape knob is in a different position than oscillator 1's, yet they're both basically sawtooth.

@@ -57,6 +57,7 @@ module.exports = {
         plugins: [
           `gatsby-remark-autolink-headers`,
           `gatsby-remark-copy-linked-files`,
+          `gatsby-remark-numbered-footnotes`,
           {
             resolve: `gatsby-remark-images`,
             options: {
