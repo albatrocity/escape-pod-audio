@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Layout from "../components/layout";
-import Helmet from "react-helmet";
+import SEO from "../components/SEO";
 import ListProjects from "../components/ListProjects";
 import PageSection from "../components/PageSection";
 import Button from "../components/Button";
@@ -38,14 +38,7 @@ const Projects = styled.div`
 
 export default ({ data }) => (
   <div>
-    <Helmet
-      defaultTitle={`Escape Pod Audio`}
-      titleTemplate={`%s | Escape Pod Audio`}
-    >
-      <meta name="og:type" content="website" />
-      <meta name="og:site_name" content="Escape Pod Audio" />
-      <html lang="en" />
-    </Helmet>
+    <SEO />
     <WidthConstrainer>
       <PageSection>
         <div

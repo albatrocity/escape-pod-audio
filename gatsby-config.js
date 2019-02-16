@@ -1,7 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `Escape Pod Music - Ross Brown`,
-    author: `Ross Brown`
+    title: `Escape Pod Audio`,
+    author: `Ross Brown`,
+    titleTemplate: "%s - Escape Pod Audio",
+    description:
+      "Escape Pod is the home studio of audio engineer and producer Ross Brown, who has been writing, recording, and producing music for over 15 years.",
+    url: "https://www.escpodaudio.com"
   },
   plugins: [
     "gatsby-plugin-catch-links",
@@ -44,13 +48,15 @@ module.exports = {
       options: {
         name: `posts`,
         path: `${__dirname}/src/posts/`,
-        ignore: [`**/\.*`]
+        ignore: [`**/\.*`] // ignore files starting with a dot
       }
     },
     {
       resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
+          `gatsby-remark-autolink-headers`,
+          `gatsby-remark-copy-linked-files`,
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -58,7 +64,8 @@ module.exports = {
               // the content container as this plugin uses this as the
               // base for generating different widths of each image.
               maxWidth: 590,
-              withWebp: true
+              withWebp: true,
+              quality: 70
             }
           }
         ]

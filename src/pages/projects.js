@@ -1,4 +1,5 @@
 import React from "react";
+import SEO from "../components/SEO";
 import Layout from "../components/layout";
 import ListProjects from "../components/ListProjects";
 import PageSection from "../components/PageSection";
@@ -7,6 +8,7 @@ import { graphql } from "gatsby";
 
 export default ({ data }) => (
   <div>
+    <SEO title="Projects" />
     <WidthConstrainer>
       <PageSection>
         <h1>Projects</h1>
