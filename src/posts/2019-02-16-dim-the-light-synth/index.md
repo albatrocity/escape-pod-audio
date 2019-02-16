@@ -8,6 +8,8 @@ description: "Breaking down the synth sounds of 'Dim The Light' by Shy Boys"
 
 ## The OB-6
 
+![Dave Smith Instruments OB-6](./ob-6.jpg)
+
 The big, sizzly synth you hear right from the get-go is the Dave Smith Instruments (now rebranded as Sequential) [OB-6](https://www.sequential.com/product/ob-6/). It's a collaboration between [Dave Smith](<https://en.wikipedia.org/wiki/Dave_Smith_(engineer)>) of [Sequential Circuits](<https://en.wikipedia.org/wiki/Sequential_(company)>) fame and [Tom Oberheim](https://en.wikipedia.org/wiki/Tom_Oberheim) (of... [Oberheim](https://en.wikipedia.org/wiki/Oberheim_Electronics) fame), taking sonic inspiration from the classic [OB-X](https://en.wikipedia.org/wiki/Oberheim_OB-X) synthesizer and wrapping it up in a modern package. I've never owned an original Oberheim synth so I can't do much in way of sound comparison, but this thing sounds like nothing else I've ever played. The oscillators are beautifully sizzly and the filter makes them shine.
 
 If you're working with a computer, check out this great [OBXD soft-synth](https://www.discodsp.com/obxd/) that can get some very similar sounds.
