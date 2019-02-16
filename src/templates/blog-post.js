@@ -11,13 +11,14 @@ const Spacer = styled.div`
 `;
 
 export default ({ data }) => {
+  console.log(data);
   const post = data.markdownRemark;
   return (
     <WidthConstrainer>
       <SEO
         title={post.frontmatter.title}
         article={true}
-        pathname={post.slug}
+        pathname={post.fields.slug}
         description={
           post.frontmatter && post.frontmatter.description
             ? post.frontmatter.description
@@ -42,6 +43,9 @@ export const query = graphql`
   query($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
+      fields {
+        slug
+      }
       frontmatter {
         title
         date
