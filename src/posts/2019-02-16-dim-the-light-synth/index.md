@@ -4,7 +4,7 @@ title: "Dim The Light Synth Sounds"
 description: "Breaking down the synth sounds of 'Dim The Light' by Shy Boys"
 ---
 
-[Shy Boys](http://www.shyboys.website) just released our [latest "double single"](https://open.spotify.com/album/1Mj5RPTMNJgRjMemf1S236?locale=nl&fo=1) to the world. Both songs feature synth sounds uncommon to previous Shy tracks. I played synth on "Dim The Light" so I thought I'd break the sounds down a little bit.
+[Shy Boys](http://www.shyboys.website) just released our [latest "double single"](https://open.spotify.com/album/1Mj5RPTMNJgRjMemf1S236?locale=nl&fo=1) to the world[^single]. Both songs feature synth sounds uncommon to previous Shy tracks. I played synth on "Dim The Light" so I thought I'd break the sounds down a little bit and share the patches.
 
 ## The OB-6
 
@@ -80,4 +80,5 @@ I drop the chorus on this patch so I'm left with just the bucket brigade delay. 
 
 These aren't groundbreaking sounds by any means but they're classic for a reason and they're simple to achieve. After all, it's less about the sound than it is what you do with it. Keep on synthesizin'.
 
+[^single]: Listen on [Spotify](https://open.spotify.com/album/1Mj5RPTMNJgRjMemf1S236?locale=nl&fo=1), [Apple Music](https://itunes.apple.com/us/album/dim-the-light-brick-by-brick-single/1451341347), [Youtube](https://www.youtube.com/watch?v=lx1lN9pErnw), and pretty much anywhere else.
 [^osc]: Both oscillators a variable wave shape, meaning you can smoothly transition from a sawtooth to a pulse wave. Oscillator 2 has the ability to use a triangle wave shape at its leftmost position on the "shape" knob. This is why oscillator 2's shape knob is in a different position than oscillator 1's, yet they're both basically sawtooth.
