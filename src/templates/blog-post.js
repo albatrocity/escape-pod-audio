@@ -11,7 +11,6 @@ const Spacer = styled.div`
 `;
 
 export default ({ data }) => {
-  console.log(data);
   const post = data.markdownRemark;
   return (
     <WidthConstrainer>
