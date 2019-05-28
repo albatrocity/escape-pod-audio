@@ -8,6 +8,18 @@ module.exports = {
     url: "https://www.escpodaudio.com"
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Escape Pod Audio`,
+        short_name: `Escape Pod Audio`,
+        start_url: `/`,
+        background_color: `#fff`,
+        theme_color: `#292259`,
+        display: `standalone`,
+        icon: `icon.svg`
+      }
+    },
     "gatsby-plugin-catch-links",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sharp",
