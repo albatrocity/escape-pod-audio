@@ -10,7 +10,7 @@
   "dependencies": {
     "babel-plugin-styled-components": "^1.8.0",
     "date-fns": "^1.30.1",
-    "gatsby": "2.4.0",
+    "gatsby": "^2.20.18",
     "gatsby-plugin-catch-links": "^2.0.4",
     "gatsby-plugin-layout": "^1.0.3",
     "gatsby-plugin-manifest": "^2.1.1",
@@ -38,7 +38,7 @@
     "typography-theme-st-annes": "^0.15.10"
   },
   "engines": {
-    "node": ">= 12.0.0",
+    "node": ">= 12.6.0",
     "npm": ">= 6.9.0"
   }
 }
