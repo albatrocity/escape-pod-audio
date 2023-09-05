@@ -29,7 +29,7 @@ export default ({ data }) => {
         <Cite>
           <time datetime={post.frontmatter.date}>
             {post.frontmatter.date &&
-              `Published ${format(post.frontmatter.date, "M/D/YY")}`}
+              `Published ${format(new Date(post.frontmatter.date), "M/d/yy")}`}
           </time>
         </Cite>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -39,7 +39,7 @@ export default ({ data }) => {
 };
 
 export const query = graphql`
-  query($slug: String!) {
+  query ($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       fields {
