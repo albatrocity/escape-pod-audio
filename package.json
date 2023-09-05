@@ -1,6 +1,5 @@
 {
-  "name": "gatsby-starter-hello-world",
-  "description": "Gatsby hello world starter",
+  "name": "escape-pod-audio",
   "license": "MIT",
   "scripts": {
     "develop": "gatsby develop",
@@ -38,7 +37,7 @@
     "typography-theme-st-annes": "^0.16.19"
   },
   "engines": {
-    "node": ">= 18.17.1",
-    "npm": ">= 9.6.7"
+    "node": ">= 18.x",
+    "npm": ">= 9.x"
   }
 }
