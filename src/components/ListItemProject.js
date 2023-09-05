@@ -49,14 +49,8 @@ const Actions = styled.div`
 
 class ListItemProject extends Component {
   render() {
-    const {
-      data,
-      image,
-      isPlaying,
-      audioUrl,
-      audioPlayFile,
-      audioSetPlaying
-    } = this.props;
+    const { data, image, isPlaying, audioUrl, audioPlayFile, audioSetPlaying } =
+      this.props;
     const isCurrentTrack = data && audioUrl === data.frontmatter.audioUrl;
 
     const handlePlay = () =>
@@ -65,7 +59,7 @@ class ListItemProject extends Component {
         : audioPlayFile({
             url: data.frontmatter.audioUrl,
             title: data.frontmatter.audioTitle,
-            artist: data.frontmatter.client
+            artist: data.frontmatter.client,
           });
 
     return (
@@ -73,12 +67,14 @@ class ListItemProject extends Component {
         {data && (
           <Container>
             <Art>
-              <ScaledImage
-                borderColor="#fff"
-                src={image.resize.src}
-                size={image.resize.width}
-                alt={`${data.frontmatter.title} by ${data.frontmatter.client}`}
-              />
+              {image && (
+                <ScaledImage
+                  borderColor="#fff"
+                  src={image.resize.src}
+                  size={image.resize.width}
+                  alt={`${data.frontmatter.title} by ${data.frontmatter.client}`}
+                />
+              )}
               {data.frontmatter.audioUrl && (
                 <div style={{ padding: "0.6rem 0" }}>
                   <Button block onClick={handlePlay}>
@@ -120,10 +116,9 @@ class ListItemProject extends Component {
 
 const mapStateToProps = ({ isPlaying, audioUrl }) => ({
   isPlaying,
-  audioUrl
+  audioUrl,
 });
 
-export default connect(
-  mapStateToProps,
-  { audioPlayFile, audioSetPlaying }
-)(ListItemProject);
+export default connect(mapStateToProps, { audioPlayFile, audioSetPlaying })(
+  ListItemProject
+);

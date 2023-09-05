@@ -7,6 +7,7 @@ title: "Equipment"
 #### Mixers
 
 - Manley 16x2 Mic Mixer
+- Neve 8816 Summing Mixer
 
 #### Preamps
 
@@ -20,8 +21,7 @@ title: "Equipment"
 - Hairball Audio 1176 clone
 - Crane Song STC-8
 - Kush Audio Tweaker (x2)
-- Art Pro VLA II
-- dBx 163 (x2)
+- Chandler EMI TG Cassette optical compressor
 
 #### EQ
 
@@ -33,11 +33,10 @@ title: "Equipment"
 
 #### Effects
 
-- Lexicon PCM81
-- Lexicon PCM60
+- Lexicon PCM81 Reverb/Effects
+- Lexicon PCM60 Reverb
 - Furman RV-1 spring reverb
 - Roland RE-501 tape echo/chorus/reverb
-- Dynacord VRS 23 analog delay
 - Dynacord CLS 222 Leslie simulator
 - Moog Stage Phaser
 
@@ -52,12 +51,3 @@ title: "Equipment"
 - Pro Tools
 - Logic Pro X
 - Ableton Live 10 Suite
-
-#### Plugins
-
-- Flux Epure v3
-- Izotope Ozone 8
-- Kush Audio Omega 458A
-- Kush Audio Novatron
-- Eventide UltraReverb
-- Eventide SP2016 Reverb
